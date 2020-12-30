@@ -22,4 +22,5 @@ RUN echo "jenkins:jenkins" | chpasswd
 COPY .ssh/authorized_keys /var/lib/jenkins/.ssh/authorized_keys
 RUN mkdir -p /var/run/sshd
 WORKDIR /var/lib/jenkins
+
 EXPOSE 22
