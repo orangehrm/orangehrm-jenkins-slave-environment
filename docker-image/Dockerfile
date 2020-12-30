@@ -9,7 +9,8 @@ USER root
 
 RUN yum -y install \
     sudo \
-    openssh-server
+    openssh-server \
+    MariaDB-server
 
 RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
 

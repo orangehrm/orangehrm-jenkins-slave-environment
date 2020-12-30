@@ -1,0 +1,13 @@
+version: '2'
+services:
+  slave:
+    image: orangehrm/orangehrm-environment-images:build-slave-7.1
+    ports:
+      - "2332:22"
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+
+    privileged: true
+    restart: always
+    hostname: build-slave-71
+    container_name: slave_web
