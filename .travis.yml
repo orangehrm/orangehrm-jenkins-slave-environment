@@ -4,7 +4,7 @@ sudo: required
 env:
   global:
   - REPO=orangehrm/orangehrm-environment-images
-  - TAG=build-slave-7.1
+  - TAG=jenkins-slave-7.1
 
 matrix:
     include:
