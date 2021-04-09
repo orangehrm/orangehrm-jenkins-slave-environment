@@ -1,4 +1,4 @@
-FROM orangehrm/orangehrm-environment-images:uat-7.1-centos
+FROM orangehrm/orangehrm-environment-images:uat-7.2-centos
 
 MAINTAINER orangehrm
 LABEL authors = "OrangeHRM TechOps <techops@orangehrm.com>"
