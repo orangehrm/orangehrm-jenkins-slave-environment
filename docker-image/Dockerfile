@@ -9,6 +9,9 @@ RUN yum -y install \
 
 RUN yum clean all
 
+# increase the PHP memlimit
+RUN sed -i 's:^memory_limit = 2048M$:memory_limit = 6144M:g' /etc/php.ini
+
 # update sshd settings, create jenkins user, set jenkins user pw, generate ssh keys
 RUN useradd -m -s /bin/bash -d /var/lib/jenkins jenkins \
     && echo "jenkins:jenkins" | chpasswd \
