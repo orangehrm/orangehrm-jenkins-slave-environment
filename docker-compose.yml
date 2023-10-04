@@ -1,7 +1,7 @@
 version: '2'
 services:
   slave:
-    image: orangehrm/orangehrm-environment-images:build-slave-7.1
+    image: orangehrm/orangehrm-environment-images:jenkins-slave-rhel8-7.4-web
     ports:
       - "2332:22"
     volumes:
@@ -9,5 +9,5 @@ services:
 
     privileged: true
     restart: always
-    hostname: build-slave-71
+    hostname: jenkins-slave-74-web
     container_name: slave_web

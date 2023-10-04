@@ -1,13 +1,11 @@
-FROM orangehrm/orangehrm-environment-images:uat-7.1-centos
+FROM orangehrm/orangehrm-environment-images:uat-7.4-rhel-a1
 
-MAINTAINER orangehrm
 LABEL authors = "OrangeHRM TechOps <techops@orangehrm.com>"
 
-RUN yum -y install \
-    MariaDB-server \
-    java-1.8.0-openjdk-headless
+RUN dnf install sudo -y
 
-RUN yum clean all
+# increase the PHP memlimit
+RUN sed -i 's:^memory_limit = 2048M$:memory_limit = 6144M:g' /etc/php.ini
 
 # update sshd settings, create jenkins user, set jenkins user pw, generate ssh keys
 RUN useradd -m -s /bin/bash -d /var/lib/jenkins jenkins \
